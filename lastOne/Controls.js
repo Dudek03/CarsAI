@@ -9,8 +9,9 @@ class Controls {
                 break
             case "DUMMY": this.forward = true
                 break
+            case "SERVER": this.dataFromServer(data)
+                break
         }
-
     }
 
     #addKeyboardListeners() {
@@ -47,4 +48,10 @@ class Controls {
             }
         }
     }
+
+    dataFromServer(data) {
+        console.log(data)
+    }
 }
+
+export default Controls

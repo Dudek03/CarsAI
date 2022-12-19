@@ -1,3 +1,4 @@
+import { lerp } from "./utils"
 class Road {
     constructor(x, width, laneCount = 3) {
         this.x = x
@@ -8,10 +9,10 @@ class Road {
         const infinity = 1000000
         this.top = -infinity
         this.bottom = infinity
-        const topLeft = {x:this.left, y:this.top}
-        const topRight = {x:this.right, y:this.top}
-        const bottomLeft = {x:this.left, y:this.bottom}
-        const bottomRight = {x:this.right, y:this.bottom}
+        const topLeft = { x: this.left, y: this.top }
+        const topRight = { x: this.right, y: this.top }
+        const bottomLeft = { x: this.left, y: this.bottom }
+        const bottomRight = { x: this.right, y: this.bottom }
         this.borders = [
             [topLeft, bottomLeft],
             [topRight, bottomRight]
@@ -27,7 +28,7 @@ class Road {
                 this.right,
                 i / this.laneCount
             )
-            ctx.setLineDash([20,20])
+            ctx.setLineDash([20, 20])
             ctx.beginPath()
             ctx.moveTo(x, this.top)
             ctx.lineTo(x, this.bottom)
@@ -42,11 +43,9 @@ class Road {
         })
     }
 
-    getLaneCenter(laneIndex){
-        const laneWidth = this.width/this.laneCount
-        return this.left+laneWidth/2+Math.min(laneIndex,this.laneCount-1)*laneWidth
+    getLaneCenter(laneIndex) {
+        const laneWidth = this.width / this.laneCount
+        return this.left + laneWidth / 2 + Math.min(laneIndex, this.laneCount - 1) * laneWidth
     }
-
-
 }
-
+export default Road

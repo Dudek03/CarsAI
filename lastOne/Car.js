@@ -1,3 +1,7 @@
+import Controls from "./Controls"
+import Sensor from "./Sensor"
+import { NeuralNetwork } from "./Network"
+import { polysIntersect } from "./utils"
 class Car {
     constructor(x, y, width, height, controlType, maxSpeed = 3) {
         this.x = x
@@ -36,7 +40,7 @@ class Car {
             )
             const outputs = NeuralNetwork.feedForward(offsets, this.brain)
 
-            if(this.useBrain){
+            if (this.useBrain) {
                 this.controls.forward = outputs[0]
                 this.controls.left = outputs[1]
                 this.controls.right = outputs[2]
@@ -126,3 +130,5 @@ class Car {
             this.sensor.draw(ctx)
     }
 }
+
+export default Car

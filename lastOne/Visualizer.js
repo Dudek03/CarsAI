@@ -1,3 +1,4 @@
+import { lerp } from "./utils";
 class Visualizer {
     static drawNetwork(ctx, network) {
         const margin = 50;
@@ -116,3 +117,5 @@ function getRGBA(value) {
     const B = value > 0 ? 0 : 255;
     return "rgba(" + R + "," + G + "," + B + "," + alpha + ")";
 }
+
+export { Visualizer, getRGBA }
