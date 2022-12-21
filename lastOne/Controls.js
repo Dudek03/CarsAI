@@ -1,5 +1,6 @@
 class Controls {
     constructor(type) {
+        this.type = type
         this.forward = false
         this.left = false
         this.right = false
@@ -9,8 +10,8 @@ class Controls {
                 break
             case "DUMMY": this.forward = true
                 break
-            case "SERVER": this.dataFromServer(data)
-                break
+            // case "SERVER": this.dataFromServer(data)
+            //     break
         }
     }
 

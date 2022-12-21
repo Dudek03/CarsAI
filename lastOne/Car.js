@@ -105,9 +105,9 @@ class Car {
         if (this.speed != 0) {
             const flip = this.speed > 0 ? 1 : -1
             if (this.controls.left)
-                this.angle += 0.02 * flip
+                this.angle += 0.004 * flip
             if (this.controls.right)
-                this.angle -= 0.02 * flip
+                this.angle -= 0.004 * flip
         }
 
         this.x -= Math.sin(this.angle) * this.speed

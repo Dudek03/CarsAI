@@ -7,15 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>self driving car Dudek</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
     <script type="module" src="./main.js"></script>
 </head>
 
 <body>
     <canvas id="carCanvas"></canvas>
     <div id="verticalButtons">
-        <button onclick="save()">saveMe</button>
-        <button onclick="discard()">destroyMe</button>
+        <button id="saveBtn">saveMe</button>
+        <button id="destroyBtn">destroyMe</button>
     </div>
     <canvas id="networkCanvas"></canvas>
 
